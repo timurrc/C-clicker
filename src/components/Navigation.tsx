@@ -1,10 +1,10 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <>
-      <nav className="text-center py-4 text-2xl font-sans font-semibold">
-        Clicker
+      <nav className="flex justify-center p-4 bg-[#303030] mb-16">
+        <h2 className="text-2xl font-[500]">Cap's click </h2>
       </nav>
       <Outlet />
     </>

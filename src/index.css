@@ -6,3 +6,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+html,
+body {
+  background-color: #333333;
+  color: #fff;
+}
+h2 {
+  font-weight: 500;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 0px 24px;
+  min-height: 80vh;
+}
