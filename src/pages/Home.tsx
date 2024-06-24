@@ -5,9 +5,20 @@ import boostImg from "../assets/bost.svg";
 import clock from "../assets/clock.svg";
 import Footer from "../components/Footer";
 import cap from "../assets/cap.png";
-// Прикрутить уведомления React toasts
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Home = () => {
-  const [count, setCount] = useState(22990);
+  const initialCount = localStorage.getItem("count")
+    ? Number(localStorage.getItem("count"))
+    : 10;
+  const [count, setCount] = useState(initialCount);
+
+  useEffect(() => {
+    // @ts-ignore
+    localStorage.setItem("count", count);
+  }, [count]);
+
   const [isBoosted, setIsBoosted] = useState(false);
 
   const Boosts = [
@@ -27,8 +38,9 @@ const Home = () => {
 
   const [currentBoost, setCurrentBoost] = useState(Boosts[0].perClick);
   const [currentBoostPrice, setCurrentBoostPrice] = useState(Boosts[0].price);
-
+  const notify = () => toast("Successful purchase");
   const buyBoost = () => {
+    notify();
     if (count >= currentBoostPrice) {
       setCount((prevCount) => prevCount - currentBoostPrice);
       const nextBoost =
@@ -48,6 +60,15 @@ const Home = () => {
       }
     }
   };
+
+  // Money per hour
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCount((prevCount) => prevCount + 10);
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -86,7 +107,7 @@ const Home = () => {
                 <p>Money per hour</p>
               </div>
               <div className="flex items-center gap-1">
-                <p>+ 10</p>
+                <p>+ 600</p>
                 <img src={coin} alt="" />
               </div>
             </div>
@@ -94,6 +115,18 @@ const Home = () => {
         </div>
       </div>
       <Footer />
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 };
