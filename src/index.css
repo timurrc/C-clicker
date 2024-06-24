@@ -8,8 +8,8 @@
 }
 html,
 body {
-  background-color: #333333;
-  color: #fff;
+  background-color: #121212;
+  color: rgba(255, 255, 255, 0.9);
 }
 h2 {
   font-weight: 500;
@@ -19,4 +19,12 @@ h2 {
   margin: auto;
   padding: 0px 24px;
   min-height: 80vh;
+}
+
+.capybara {
+  transition: 0.1s ease-in-out;
+
+  &:active {
+    transform: scale(0.97);
+  }
 }

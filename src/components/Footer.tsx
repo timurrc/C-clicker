@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="ba bg-[#303030]">
-      <nav className="flex items-center justify-between px-[24px] py-2">
+    <div className="bg-[#202020] h-[6vh] flex items-center">
+      <nav className="flex items-center gap-28 px-[24px] py-2">
         <h2>Cap's click</h2>
         <ul className="flex gap-2">
           <li>
