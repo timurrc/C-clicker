@@ -1,0 +1,6 @@
+.Boosts {
+  @apply flex justify-center flex-col gap-4 items-center;
+  .boostBtn {
+    @apply py-2 px-4 border rounded-md hover:bg-[#b98500] transition-all flex gap-2 items-center;
+  }
+}

@@ -1,0 +1,23 @@
+.total {
+  @apply flex flex-col items-center gap-2 mb-16 text-xl;
+  .totalCount {
+    @apply flex gap-1;
+  }
+}
+.possibilities {
+  @apply flex justify-center gap-4 mb-16;
+  .Bonus {
+    @apply bg-yellow-600 hover:bg-yellow-700 py-2 px-4 rounded-3xl shadow-md flex items-center gap-3 transition-all cursor-pointer w-64 justify-center;
+    box-shadow: "1px 1px 4px rgba(255, 184, 0, 0.5)";
+  }
+  span {
+    color: #ffb810;
+  }
+  .Boost {
+    @apply border rounded-3xl px-4 py-2 flex mr-2  items-center cursor-pointer hover:bg-yellow-700 transition-all;
+  }
+}
+
+.coinClick {
+  @apply flex justify-center;
+}

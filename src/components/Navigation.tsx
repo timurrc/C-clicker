@@ -1,10 +1,13 @@
 import { Link, Outlet } from "react-router-dom";
-
+import Home from "../Images/Home.svg";
+import styles from "../styles/Navigation.module.scss";
 const Navigation = () => {
   return (
     <>
-      <nav className="flex justify-center p-4 bg-[#202022] mb-16">
-        <h2 className="text-2xl font-[500]">Cap's click </h2>
+      <nav className={styles.Navigation}>
+        <Link to="/">
+          <img src={Home} width="24" alt="" />
+        </Link>
       </nav>
       <Outlet />
     </>
